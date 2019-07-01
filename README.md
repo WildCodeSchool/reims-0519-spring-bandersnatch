@@ -24,9 +24,11 @@
 
 Give a ⭐️ if this project helped you!
 
-## Product Backlog
+## Product Backlog et Mokflow
 
-Le [Product Backlog](https://docs.google.com/spreadsheets/d/1zEzauqr0lkbFkUqQUhgtqH-67HqXM-f9MlMrp_igeSg/edit?usp=sharing) est lisible ici.
+Le [Product Backlog](https://docs.google.com/spreadsheets/d/1W5OG98730tb9wlW7AkuOAJqeXFHsFyEypyhp2hCMA2Q/edit?usp=sharing).
+
+La [Maquette en Mokflow](https://wireframepro.mockflow.com/view/M7091b6c6f94a6777927496a983d221ac1560759961421#/page/5c3cbeda1e14450ebce0ae2caccfeff1).
 
 
 ***
