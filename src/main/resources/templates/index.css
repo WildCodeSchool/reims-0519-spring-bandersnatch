@@ -20,11 +20,7 @@ body
     letter-spacing: 0.0625em;
 }
 
-.btn
-{
-    align-self: center;    
-    width: 20%;
-}
+
 
 footer
 {
@@ -45,7 +41,6 @@ footer
 }
 
 .bandhead h2 {
-    font-size: 245%;
     text-align: center;
     font-size: 2.5rem;
     line-height: 2.5rem;
@@ -60,7 +55,6 @@ footer
     max-width: 40rem;
     font-size: 1.25rem;
 }
-
 
 
 .btn {
@@ -101,18 +95,27 @@ a:focus, a:hover {
 }
 
 .bg-black {
-    background-color: #161616 !important;
+    background-color: #161616;
 }
 
 .bg-primary {
-    background-color: #64a19d !important;
+    background-color: #64a19d;
 }
 
 .text-primary {
-    color: #64a19d !important;
+    color: #64a19d;
 }
 
-footer {
-    padding: 5rem 0;
-}
 
+input {
+    -webkit-box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1);
+    padding: 0.25rem 0.60rem;
+    font-family: 'Varela Round';
+    font-size: 80%;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    border: 0;
+    border-radius: 5px;
+    height: auto;
+}
