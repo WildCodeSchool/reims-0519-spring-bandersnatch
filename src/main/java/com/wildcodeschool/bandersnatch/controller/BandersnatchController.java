@@ -1,5 +1,4 @@
-package com.wildcodeschool.bandersnatch;
-
+package com.wildcodeschool.bandersnatch.controller;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,12 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 
+@Controller
 @SpringBootApplication
-public class BandersnatchApplication {
+public class BandersnatchController {
 
-    public static void main(String[] args) {
-        SpringApplication.run(BandersnatchApplication.class, args);
-    }
-
-    
+@RequestMapping(value="/hello/{name}")
+@ResponseBody
+public String hello(@PathVariable String name) {
+    return "Hello " + name;
+}
 }

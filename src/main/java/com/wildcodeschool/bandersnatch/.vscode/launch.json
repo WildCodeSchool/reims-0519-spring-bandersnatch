@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BandersnatchApplication",
+            "request": "launch",
+            "mainClass": "com.wildcodeschool.bandersnatch.BandersnatchApplication"
+        }
+    ]
+}
