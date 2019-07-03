@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 class GameController {
 
+
+
     @PostMapping("/game")
-    @ResponseBody
     public String game(HttpSession session, Model model, @RequestParam(required=false) String nickname, @RequestParam(required=false) String action) {
         if(session.getAttribute("nickname") == null) {
             // first time we get here : check nickname
@@ -43,10 +44,9 @@ class GameController {
         // we're still playing : show the current choice
         model.addAttribute("nickname", nickname);
         
-           Object game;
-		return  "<form action='/game' method='post'><input name='action' value='win'><button class='btn btn-primary my-1'>Get out of prison!</button></form>" +
-                "<form action='/game' method='post'><input name='action' value='lose'><button class='btn btn-primary my-1'>Get out of prison!</button></form>";
-        
+            // "<form action='/game' method='post'><input name='action' value='win'><button class='btn btn-primary my-1'>Get out of prison!</button></form>" +
+            // "<form action='/game' method='post'><input name='action' value='lose'><button class='btn btn-primary my-1'>Get out of prison!</button></form>";
+        return "game";
     }
 
 }
