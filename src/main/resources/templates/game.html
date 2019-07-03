@@ -24,6 +24,7 @@
     <header>
 
             <h1>Bandersnatch   -   Project 2</h1>
+            <p><strong th:text="${nickname}">player</strong> read the story <span th:text="${currentRoom.name}">0</span></p>
 
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -64,11 +65,16 @@
                     <br><strong>choice</strong> : On the right you have a long corridor. the left you see a door that looks open.
                     choose between left or right.</p>
 
-                <form action="/game" method="get">
-                    <!--button-->
-                    <button class="btn btn-primary my-1">LEFT</button>
-                    <button class="btn btn-primary my-1">RIGHT</button>
-                </form>              
+                    <form action='/game' method='post'>
+                        <input name='action' value='Right'>
+                        <button class='btn btn-primary my-1'>Right</button>
+                    </form>      
+
+                <form action='/game' method='post'>
+                    <input name='action' value='Left'>
+                    <button class='btn btn-primary my-1'>Left</button>
+                </form>
+                
             </div>
     
         </div>
