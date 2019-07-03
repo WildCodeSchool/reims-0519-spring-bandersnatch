@@ -12,10 +12,6 @@ class PageController {
         return "index";
     }
 
-    @GetMapping("/game")
-    public String game(Model model) {
-        return "game";
-    }
 
     @GetMapping("/result")
     public String result(Model model) {
