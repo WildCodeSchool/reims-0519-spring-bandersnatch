@@ -26,5 +26,6 @@ hs_err_pid*
 *.project
 *.settings
 target/
+bin/
 *.vscode
 *.DS_STORE
