@@ -33,32 +33,80 @@ class GameController {
             // we're playing : check the current action
             Room nextRoom = null;
             int currentRoomId = ((Room)session.getAttribute("currentRoom")).getId();
+           
             if(currentRoomId == 1) {
                 if(action.equals("Left")) {
-                    nextRoom = roomRepository.getRoomById(2);
+                    nextRoom = roomRepository.getRoomById(5);
                     // one day: nextRoom = currentRoom.getLeftRoom();
                 }
                 if(action.equals("Right")) {
-                    nextRoom = roomRepository.getRoomById(5);
+                    nextRoom = roomRepository.getRoomById(2);
                     // one day: nextRoom = currentRoom.getRightRoom();
                 }
             }
+
             if(currentRoomId == 2) {
                 if(action.equals("Left")) {
-                    nextRoom = roomRepository.getRoomById(1);
-                }
-                if(action.equals("Right")) {
                     nextRoom = roomRepository.getRoomById(5);
                 }
-            }
-            if(currentRoomId == 5) {
-                if(action.equals("Left")) {
+                if(action.equals("Right")) {
                     nextRoom = roomRepository.getRoomById(3);
+                }
+            }
+
+            if(currentRoomId == 3) {
+                if(action.equals("Left")) {
+                    nextRoom = roomRepository.getRoomById(4);
                 }
                 if(action.equals("Right")) {
                     nextRoom = roomRepository.getRoomById(4);
                 }
             }
+
+            if(currentRoomId == 4) {
+                if(action.equals("Left")) {
+                    nextRoom = roomRepository.getRoomById(2);
+                }
+                if(action.equals("Right")) {
+                    nextRoom = roomRepository.getRoomById(3);
+                }
+            }
+
+            if(currentRoomId == 5) {
+                if(action.equals("Left")) {
+                    nextRoom = roomRepository.getRoomById(7);
+                }
+                if(action.equals("Right")) {
+                    nextRoom = roomRepository.getRoomById(6);
+                }
+            }
+
+            if(currentRoomId == 6) {
+                if(action.equals("Left")) {
+                    nextRoom = roomRepository.getRoomById(8);
+                }
+                if(action.equals("Right")) {
+                    nextRoom = roomRepository.getRoomById(3);
+                }
+            }
+            
+            if(currentRoomId == 7) {
+                if(action.equals("Left")) {
+                    nextRoom = roomRepository.getRoomById(8);
+                }
+                if(action.equals("Right")) {
+                    nextRoom = roomRepository.getRoomById(6);
+                }
+            }
+
+            if(currentRoomId == 8) {
+            // victory
+                return "result";
+            }
+
+
+
+            
             session.setAttribute("currentRoom", nextRoom);// salle courante = salle suivante
         }
 

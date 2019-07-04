@@ -16,6 +16,8 @@ public class RoomRepository {
         room.add(new Room(4, "4"));
         room.add(new Room(5, "5"));
         room.add(new Room(6, "6"));
+        room.add(new Room(7, "7"));
+        room.add(new Room(8, "8"));
 
     }
 
