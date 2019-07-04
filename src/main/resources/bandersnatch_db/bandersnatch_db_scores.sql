@@ -1,5 +1,3 @@
--- MySQL dump 10.13  Distrib 5.7.26, for Linux (x86_64)
---
 -- Host: localhost    Database: bandersnatch_db
 -- ------------------------------------------------------
 -- Server version	5.7.26-0ubuntu0.18.04.1
@@ -25,7 +23,7 @@ DROP TABLE IF EXISTS `scores`;
 CREATE TABLE `scores` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nickname` varchar(100) NOT NULL,
-  `score` int(11) DEFAULT NULL,
+  `user_score` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -48,4 +46,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-07-02 16:31:40
+-- Dump completed on 2019-07-04 14:59:54
