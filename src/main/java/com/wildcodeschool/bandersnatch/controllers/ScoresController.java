@@ -22,12 +22,11 @@ public class ScoresController {
         return ScoresRepository.selectByNickname(scores);
     }
 
-@PostMapping("/scores")
+@PostMapping("/scores/{id}")
 @ResponseStatus(HttpStatus.CREATED)
 public Scores store(
     @RequestParam String nickname,
-    @RequestParam (defaultValue = "0") int user_score
-    ) {
+    @RequestParam (defaultValue = "0") int user_score) {
     int idGeneratedByInsertion = ScoresRepository.insert(
         nickname,
         user_score

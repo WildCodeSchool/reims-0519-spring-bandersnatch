@@ -18,7 +18,7 @@ public class ScoresRepository {
 
     private final static String DB_URL = "jdbc:mysql://localhost:3306/bandersnatch_db?serverTimezone=GMT";
     private final static String DB_USER = "root";
-    private final static String DB_PASSWORD = "@AdminEcho1234";
+    private final static String DB_PASSWORD = "segatower51";
 
     public static List<Scores> selectByNickname(String nickname) {
         try(
@@ -126,4 +126,5 @@ public class ScoresRepository {
             );
         }
     }
+
 }
