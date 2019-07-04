@@ -22,6 +22,7 @@
     <header>
 
             <h1>Bandersnatch   -   Project 2</h1>
+            <p><strong th:text="${nickname}">player</strong> read the story <span th:text="${currentRoom.name}">0</span></p>
 
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -56,6 +57,7 @@
     
     <section class="bander">
 
+
         <div class="card text-center">
             <div class="card-header">
               Bandersnatch
@@ -67,10 +69,10 @@
                 choose between left or right.</p>
               <form action="/game" method="post">
                     <!--button-->
-                <button class="btn btn-primary my-1">LEFT</button>
+                <button name='action' value='Left' class="btn btn-primary my-1">Left</button>
               </form>
               <form action="/game" method="post">
-                <button class="btn btn-primary my-1">RIGHT</button>
+                <button name='action' value='Right' class="btn btn-primary my-1">Right</button>
               </form>              
             </div>
           </div>

@@ -12,7 +12,6 @@ class PageController {
         return "index";
     }
 
-
     @GetMapping("/result")
     public String result(Model model) {
         return "result";
