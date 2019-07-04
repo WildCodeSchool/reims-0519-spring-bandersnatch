@@ -23,4 +23,8 @@ public class Scores {
     public int getUser_score() {
         return user_score;
     }
+
+    public void setUser_score(int user_score) {
+        this.user_score = user_score;
+    }
 }

@@ -11,6 +11,10 @@ class PageController {
     public String index(Model model) {
         return "index";
     }
+    @GetMapping("/scores")
+    public String scores(Model model) {
+        return "scores";
+    }
 
     @GetMapping("/result")
     public String result(Model model) {
