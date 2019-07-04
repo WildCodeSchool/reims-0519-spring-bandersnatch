@@ -10,9 +10,12 @@ public class RoomRepository {
 
     public RoomRepository() {
         this.room = new ArrayList<Room>();
-        room.add(new Room(1, "Sébastien Dupuis"));
-        room.add(new Room(2, "Nicolas Huraux"));
-        room.add(new Room(3, "Furkan Celik"));
+        room.add(new Room(1, "1"));
+        room.add(new Room(2, "2"));
+        room.add(new Room(3, "3"));
+        room.add(new Room(4, "4"));
+        room.add(new Room(5, "5"));
+        room.add(new Room(6, "6"));
 
     }
 
