@@ -5,17 +5,13 @@ h1
     padding-bottom: 2%;
     padding-top: 2%;
     color: #333333;
-    margin: 0;
 }
 
 .bander{
     height: 300px;
     width: 50%;
-    background-color: #4f837f;
-    border-radius: 15px;
     margin-left: 25%;
-    margin-top: 6%;
-    padding-top: 6%;
+    margin-top: 4%;
     padding-bottom: 5%;
 }
 h2
@@ -35,11 +31,25 @@ form{
     display: flex;
     justify-content: space-around;
 }
+.card-header{
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: underline;
+    color:#4f837f;
+ 
+}
+h3{
+    font-size: 25px;
+    color:#4f837f;
+    font-family:'Nunito';
+    font-weight: bold;
+}
 
 p{
     font-size: 20px;
-    color:white;
+    color:#4f837f;
     font-family: 'Nunito';
+    
 }
 strong{
     text-decoration: underline;

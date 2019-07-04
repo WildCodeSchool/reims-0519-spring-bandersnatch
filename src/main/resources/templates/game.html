@@ -15,8 +15,6 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
                           
-            
-            
     <title>Bandersnatch</title>
   </head>
 
@@ -59,18 +57,27 @@
     
     <section class="bander">
 
-        <div class="container d-flex h-100 align-items-center">
-            <div class="mx-auto text-center">
-                    <p><span th:text="${currentRoom.name}"></span></p>
 
-                    <form action='/game' method='post'>
-                        <button class='btn btn-primary my-1' name='action' value='Right'>Right</button>
-                        <button class='btn btn-primary my-1' name='action' value='Left'>Left</button>
-                    </form>
-                
+
+        <div class="card text-center">
+            <div class="card-header">
+              Bandersnatch
             </div>
-    
-        </div>
+            <div class="card-body">
+              <h3 class="card-title">ROOM 0</h3>
+              <p class="card-text">You're in jail, your friends Sherlock and Watson are waiting for you at the exit. You find a hidden key in your meal tray. Open the door and run off through the Buckingham Palace subway. You are in <strong>room 0</strong>, try to escape !<br>
+                <strong>choice</strong> : On the right you have a long corridor. the left you see a door that looks open.
+                choose between left or right.</p>
+              <form action="/game" method="post">
+                    <!--button-->
+                <button name='action' value='Left' class="btn btn-primary my-1">Left</button>
+              </form>
+              <form action="/game" method="post">
+                <button name='action' value='Right' class="btn btn-primary my-1">Right</button>
+              </form>              
+            </div>
+          </div>
+
     </section>
         
 
@@ -79,3 +86,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
+
+
+
