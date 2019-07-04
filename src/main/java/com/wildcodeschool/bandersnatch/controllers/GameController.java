@@ -1,11 +1,16 @@
 package com.wildcodeschool.bandersnatch.controllers;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+
 import javax.servlet.http.HttpSession;
 
 import com.wildcodeschool.bandersnatch.entities.Room;
-import com.wildcodeschool.bandersnatch.entities.Scores;
+import com.wildcodeschool.bandersnatch.entities.Score;
 import com.wildcodeschool.bandersnatch.repositories.RoomRepository;
-import com.wildcodeschool.bandersnatch.repositories.ScoresRepository;
+import com.wildcodeschool.bandersnatch.repositories.ScoreRepository;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -65,14 +70,15 @@ class GameController {
             if(currentRoomId == 5) {
                 if(action.equals("Left")) {
                     currentScores++;
-                    return "scores"+currentScores;
+                    return "scores";
                     //nextRoom = roomRepository.getRoomById(3);
                 }
                 if(action.equals("Right")) {
                     currentScores++;
                     //nextRoom = roomRepository.getRoomById(4);
                     //return "scores"+currentScores;
-                    ScoresRepository.insert(nickname, currentScores);
+                    ScoreRepository.insert("test", currentScores);                   
+                    return "scores";
                 }
             }
             session.setAttribute("currentRoom", nextRoom);// salle courante = salle suivante
