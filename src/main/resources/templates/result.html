@@ -10,19 +10,20 @@
             
     <!-- test fenetre modal -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/game.css">
+    <link rel="stylesheet" type="text/css" href="/result.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
                           
+            
+            
     <title>Bandersnatch</title>
   </head>
 
   <body>    
     <header>
 
-            <h1>Bandersnatch   -   Project 2</h1>
-            <p><strong th:text="${nickname}">player</strong> read the story <span th:text="${currentRoom.name}">0</span></p>
+            <h1>Bandersnatch   -   Projet 2</h1>
 
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -52,33 +53,20 @@
             </div>
         </nav>
     </header>
-    
-    <h2 class="mx-auto my-0 text-uppercase">ready to escape</h2>
-    
-    <section class="bander">
+ 
 
-
-
-        <div class="card text-center">
-            <div class="card-header">
-              Bandersnatch
+    <div class="container">
+        <article class="card align-items-center" style="width: 50rem;">
+            <div class="card-body ">
+        <h2 class="card-title">${result}</h2>
+        <p class="card-text">${date}<br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis imperdiet massa, ut tincidunt turpis. Fusce in ante suscipit sapien elementum faucibus vitae eu ante. Ut imperdiet accumsan mi in feugiat. </p>
             </div>
-            <div class="card-body">
-              <h3 class="card-title">ROOM 0</h3>
-              <p class="card-text">You're in jail, your friends Sherlock and Watson are waiting for you at the exit. You find a hidden key in your meal tray. Open the door and run off through the Buckingham Palace subway. You are in <strong>room 0</strong>, try to escape !<br>
-                <strong>choice</strong> : On the right you have a long corridor. the left you see a door that looks open.
-                choose between left or right.</p>
-              <form action="/game" method="post">
-                    <!--button-->
-                <button name='action' value='Left' class="btn btn-primary my-1">Left</button>
-              </form>
-              <form action="/game" method="post">
-                <button name='action' value='Right' class="btn btn-primary my-1">Right</button>
-              </form>              
-            </div>
-          </div>
+                
+        </article>
+    </div>
 
-    </section>
+
+<!-- texte ici-->
         
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -86,6 +74,3 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
-
-
-
