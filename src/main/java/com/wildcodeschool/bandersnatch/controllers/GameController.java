@@ -20,11 +20,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 class GameController {
     int currentScores = 0;
+   
     private static RoomRepository roomRepository = new RoomRepository();
 
     @PostMapping("/game")
     public String game(HttpSession session, Model model, @RequestParam(required=false) String nickname, @RequestParam(required=false) String action) {
-        
+         
 
         if(session.getAttribute("nickname") == null) {
             // first time we get here : check nickname
@@ -41,6 +42,7 @@ class GameController {
         }
 
         if(action != null) {
+            Object pseudo = session.getAttribute("nickname");
             // we're playing : check the current action
             Room nextRoom = null;
             int currentRoomId = ((Room)session.getAttribute("currentRoom")).getId();
@@ -77,7 +79,7 @@ class GameController {
                     currentScores++;
                     //nextRoom = roomRepository.getRoomById(4);
                     //return "scores"+currentScores;
-                    ScoreRepository.insert("test", currentScores);                   
+                    ScoreRepository.insert((String) pseudo, currentScores);
                     return "scores";
                 }
             }
