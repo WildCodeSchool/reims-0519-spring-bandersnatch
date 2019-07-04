@@ -1,5 +1,3 @@
--- MySQL dump 10.13  Distrib 5.7.26, for Linux (x86_64)
---
 -- Host: localhost    Database: bandersnatch_db
 -- ------------------------------------------------------
 -- Server version	5.7.26-0ubuntu0.18.04.1
