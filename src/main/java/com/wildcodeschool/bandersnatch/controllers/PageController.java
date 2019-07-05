@@ -11,7 +11,6 @@ class PageController {
     public String index(Model model) {
         return "index";
     }
-    
 
     @GetMapping("/result")
     public String result(Model model) {
