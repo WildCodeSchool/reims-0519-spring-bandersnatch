@@ -6,11 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RoomRepository {
+
     private List<Room> rooms;
 
     public RoomRepository() {
         this.rooms = new ArrayList<Room>();
-        rooms.add(new Room(1, "You just arrived in the Room of Torture, lucky bastard :) Your new friend was waiting for you, his name is « Romano el CodMaster », he wants to keep your eyes open with giant forks, in front of a kind of « shiny window », with weird text written on it, for hours and for his own enjoyment. You need to escape as soon as possible!!!  The door you came by is now locked, 2 choices in front of you. Hurry up, pick a door!!!"));
+        rooms.add(new Room(1, "You just arrived in the Room of Torture, lucky you :) Your new friend was waiting for you, his name is « Romano el CodMaster », he wants to keep your eyes open with giant forks, in front of a kind of « shiny window », with weird text written on it, for hours and for his own enjoyment. You need to escape as soon as possible!!!  The door you came by is now locked, 2 choices in front of you. Hurry up, pick a door!!!"));
         
         rooms.add(new Room(2, "You are in the Room of Remus. Someone his running all around this room with a weird big ball looking like a bean… His name is Nikolaï Huranoff, he wants you to play with him. Big and strong, you don’t want to offend him and you say yes, otherwise the risk is your head looks like the ball. After few hours, you’re exhausted and want to rest but Nikolaï does not…never... Quick!!! Run from this crazy guy, you have 2 possibilities, because your previous door you came by his now locked. Hurry up, take a pick!!!"));
         
@@ -29,12 +30,17 @@ public class RoomRepository {
     }
 
     public List<Room> getRooms() {
+
+
+
         return room;
     }
 
     public Room getRoomById(int id) {
         for(Room room : room) {
-            if(rooms.getId() == id) {
+
+            if(room.getId() == id) {
+
                 return room;
             }
         }
