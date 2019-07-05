@@ -16,5 +16,4 @@ class PageController {
     public String result(Model model) {
         return "result";
     }
-
 }
