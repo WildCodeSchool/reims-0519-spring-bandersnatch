@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 class GameController {
-    int currentScores = 0;
+    int currentScore = 0;
    
     private static RoomRepository roomRepository = new RoomRepository();
 
@@ -37,7 +37,7 @@ class GameController {
             // register nickname in the session
             session.setAttribute("nickname", nickname);
             session.setAttribute("currentRoom", roomRepository.getRoom().get(0));
-            session.setAttribute("currentScores", currentScores);
+            session.setAttribute("currentScores", currentScore);
             
         }
 
@@ -48,38 +48,38 @@ class GameController {
             int currentRoomId = ((Room)session.getAttribute("currentRoom")).getId();
             if(currentRoomId == 1) {
                 if(action.equals("Left")) {
-                 currentScores++;
+                 currentScore++;
                     nextRoom = roomRepository.getRoomById(2);
                     // one day: nextRoom = currentRoom.getLeftRoom();
                 
                 }
                 if(action.equals("Right")) {
-                    currentScores++;
+                    currentScore++;
                     nextRoom = roomRepository.getRoomById(5);
                     // one day: nextRoom = currentRoom.getRightRoom();
                 }
             }
             if(currentRoomId == 2) {
                 if(action.equals("Left")) {
-                    currentScores++;
+                    currentScore++;
                     nextRoom = roomRepository.getRoomById(1);
                 }
                 if(action.equals("Right")) {
-                    currentScores++;
+                    currentScore++;
                     nextRoom = roomRepository.getRoomById(5);
                 }
             }// to doo : finishing the room navigation
             if(currentRoomId == 5) {
                 if(action.equals("Left")) {
-                    currentScores++;
+                    currentScore++;
                     return "scores";
                     //nextRoom = roomRepository.getRoomById(3);
                 }
                 if(action.equals("Right")) {
-                    currentScores++;
+                    currentScore++;
                     //nextRoom = roomRepository.getRoomById(4);
                     //return "scores"+currentScores;
-                    ScoreRepository.insert((String) pseudo, currentScores);
+                    ScoreRepository.insert((String) pseudo, currentScore);
                     return "scores";
                 }
             }
