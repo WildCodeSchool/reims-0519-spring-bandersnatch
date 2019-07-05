@@ -26,7 +26,7 @@ class GameController {
 
             // register nickname in the session
             session.setAttribute("nickname", nickname);
-            session.setAttribute("currentRoom", roomRepository.getRoom().get(0));
+            session.setAttribute("currentRoom", roomRepository.getRooms().get(0));
         }
 
         if(action != null) {
