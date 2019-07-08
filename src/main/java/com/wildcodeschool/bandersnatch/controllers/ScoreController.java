@@ -20,7 +20,8 @@ public class ScoreController {
     @ResponseBody
     public List<Score> getScores() {
         return ScoreRepository.selectAll();
-}
+    }
+    
     @PostMapping("/scores")
     public String store(
         @RequestParam String nickname,
