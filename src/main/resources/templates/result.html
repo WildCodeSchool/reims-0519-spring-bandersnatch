@@ -10,7 +10,7 @@
             
     <!-- test fenetre modal -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="result.css">
+    <link rel="stylesheet" type="text/css" href="/result.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -25,30 +25,20 @@
                 <div class="card-body ">
                     <h2 class="card-title">Leaderboard</h2>
                     <table class="table table-dark">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th><strong th:text="${nickname}"></strong></th>
-                                    <th><strong th:text="${userScore}"></strong></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="table-active">
-                                    <th scope="row">1</th>
-                                    <td>Fufu</td>
-                                    <td>5</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Cecil</td>
-                                    <td>9</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Julien</td>
-                                    <td>13</td>
-                                </tr>
-                            </tbody>
+                            
+                        <thead>
+                            <tr>
+                            <td>Rank</td>
+                            <td>UserName</td>
+                            <td>Score</td>
+                            </tr>
+                        </thead>
+                        <tr th:each="score : ${scores}">
+                                <th scope="row">1st</th>
+                                <td><strong th:text="${score.nickname}"></strong></td>
+                                <td><strong th:text="${score.user_score}"></strong></td>
+                            </tr>
+                        <tbody>                        
                     </table>
                 </div>
             </div>
@@ -56,16 +46,7 @@
     </header>
  
 
-    <div class="container">
-        <article class="card align-items-center" style="width: 50rem;">
-            <div class="card-body ">
-        <h2 class="card-title"></h2>
-        <h3 class="card-title">Hey <strong th:text="${nickname}"></strong></h3>
-        <p class="card-text">${date}<br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis imperdiet massa, ut tincidunt turpis. Fusce in ante suscipit sapien elementum faucibus vitae eu ante. Ut imperdiet accumsan mi in feugiat. </p>
-            </div>
-                
-        </article>
-    </div>
+    
 
 
 <!-- texte ici-->
