@@ -19,7 +19,7 @@ public class ScoreController {
     @GetMapping("/scores")
     @ResponseBody
     public List<Score> getScores() {
-        return ScoreRepository.selectAll();
+        return ScoreRepository.selectScores();
     }
 
     @PostMapping("/scores")

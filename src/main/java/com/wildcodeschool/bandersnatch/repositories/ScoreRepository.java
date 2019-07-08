@@ -52,13 +52,13 @@ public class ScoreRepository {
             );
         }
     }
-    public static List<Score> selectAll() {
+    public static List<Score> selectScores() {
         try(
             Connection connection = DriverManager.getConnection(
                 DB_URL, DB_USER, DB_PASSWORD
             );
             PreparedStatement statement = connection.prepareStatement(
-                "SELECT * FROM scores"
+                "SELECT * FROM scores ORDER BY user_score LIMIT 0, 5;"
             );
             ResultSet resulSet = statement.executeQuery();
         ) {
