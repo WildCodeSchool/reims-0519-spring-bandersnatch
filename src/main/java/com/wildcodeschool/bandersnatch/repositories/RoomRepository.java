@@ -1,9 +1,7 @@
 package com.wildcodeschool.bandersnatch.repositories;
 
 import com.wildcodeschool.bandersnatch.entities.Room;
-
 import java.util.ArrayList;
-
 import java.util.List;
 
 public class RoomRepository {
@@ -27,9 +25,9 @@ public class RoomRepository {
     public List<Room> getRooms() {
 
         return rooms;
-
     }
 
+    
     public Room getRoomById(int id) {
 
         for(Room room : rooms) {
@@ -38,7 +36,6 @@ public class RoomRepository {
 
                 return room;
             }
-
         }
         return null;
     }
