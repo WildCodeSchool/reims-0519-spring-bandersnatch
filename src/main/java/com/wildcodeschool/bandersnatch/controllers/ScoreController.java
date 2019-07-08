@@ -25,11 +25,11 @@ public class ScoreController {
     @PostMapping("/scores")
     public String store(
         @RequestParam String nickname,
-        @RequestParam (defaultValue = "0") int user_score
+        @RequestParam (defaultValue = "0") int userScore
     ) {
         int idGeneratedByInsertion = ScoreRepository.insert(
             nickname,
-            user_score
+            userScore
         );
         return "redirect:/scores";
     }

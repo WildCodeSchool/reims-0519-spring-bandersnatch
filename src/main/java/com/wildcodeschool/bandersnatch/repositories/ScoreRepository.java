@@ -18,7 +18,7 @@ public class ScoreRepository {
 
     private final static String DB_URL = "jdbc:mysql://localhost:3306/bandersnatch_db?serverTimezone=GMT";
     private final static String DB_USER = "root";
-    private final static String DB_PASSWORD = "";
+    private final static String DB_PASSWORD = "segatower51";
 
     public static List<Score> selectByNickname(String nickname) {
         try(
@@ -39,8 +39,8 @@ public class ScoreRepository {
                 while(resulSet.next()){
                     int id = resulSet.getInt("id");
                     nickname = resulSet.getString("nickname");
-                    int user_score = resulSet.getInt("user_score");
-                    scores.add(new Score(id, nickname, user_score));
+                    int userScore = resulSet.getInt("user_score");
+                    scores.add(new Score(id, nickname, userScore));
                 }
 
                 return scores;
@@ -67,8 +67,8 @@ public class ScoreRepository {
             while(resulSet.next()){
                 int id = resulSet.getInt("id");
                 String nickname = resulSet.getString("nickname");
-                int user_score = resulSet.getInt("user_score");
-                scores.add(new Score(id, nickname, user_score));
+                int userScore = resulSet.getInt("user_score");
+                scores.add(new Score(id, nickname, userScore));
             }
 
             return scores;
@@ -96,8 +96,8 @@ public class ScoreRepository {
             ) {
                 if(resulSet.next()){
                     String nickname = resulSet.getString("nickname");
-                    int user_score = resulSet.getInt("user_score");
-                    return new Score(id, nickname, user_score);
+                    int userScore = resulSet.getInt("user_score");
+                    return new Score(id, nickname, userScore);
                 }
                 else {
                     throw new ResponseStatusException(
@@ -114,7 +114,7 @@ public class ScoreRepository {
     }
     public static int insert(
         String nickname,
-        int user_score
+        int userScore
     ) {
         try(
             Connection connection = DriverManager.getConnection(
@@ -126,7 +126,7 @@ public class ScoreRepository {
             );
         ) {
             statement.setString(1, nickname);
-            statement.setInt(2, user_score);
+            statement.setInt(2, userScore);
     
             if(statement.executeUpdate() != 1) {
                 throw new ResponseStatusException(
