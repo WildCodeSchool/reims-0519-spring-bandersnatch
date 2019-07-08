@@ -26,7 +26,7 @@ class GameController {
 
             // register nickname in the session
             session.setAttribute("nickname", nickname);
-            session.setAttribute("currentRoom", roomRepository.getRoom().get(0));
+            session.setAttribute("currentRoom", roomRepository.getRooms().get(0));
         }
 
         if(action != null) {
@@ -100,6 +100,25 @@ class GameController {
             }
 
             if(currentRoomId == 8) {
+                if(action.equals("Left")) {
+                    nextRoom = roomRepository.getRoomById(9);
+                }
+                if(action.equals("Right")) {
+                    nextRoom = roomRepository.getRoomById(10);
+                }
+            }
+
+            if(currentRoomId == 9) {
+                if(action.equals("Left")) {
+                    nextRoom = roomRepository.getRoomById(7);
+                }
+                if(action.equals("Right")) {
+                    nextRoom = roomRepository.getRoomById(10);
+                }
+            }
+
+
+            if(currentRoomId == 10) {
             // victory
                 return "result";
             }
