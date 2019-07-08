@@ -25,20 +25,16 @@ class GameController {
 
     @PostMapping("/game")
     public String game(HttpSession session, Model model, @RequestParam(required=false) String nickname, @RequestParam(required=false) String action) {
-         
-
         if(session.getAttribute("nickname") == null) {
             // first time we get here : check nickname
             if(nickname == null || nickname.equals("")) {
                 // invalid nickname : go back to home page
                 return "redirect:/";
-            }
-            
+            } 
             // register nickname in the session
             session.setAttribute("nickname", nickname);
             session.setAttribute("currentRoom", roomRepository.getRoom().get(0));
-            session.setAttribute("currentScores", currentScore);
-            
+            session.setAttribute("currentScore", currentScore);    
         }
 
         if(action != null) {
@@ -46,43 +42,77 @@ class GameController {
             // we're playing : check the current action
             Room nextRoom = null;
             int currentRoomId = ((Room)session.getAttribute("currentRoom")).getId();
+           
             if(currentRoomId == 1) {
                 if(action.equals("Left")) {
-                 currentScore++;
-                    nextRoom = roomRepository.getRoomById(2);
+                    nextRoom = roomRepository.getRoomById(5);
                     // one day: nextRoom = currentRoom.getLeftRoom();
-                
                 }
                 if(action.equals("Right")) {
-                    currentScore++;
-                    nextRoom = roomRepository.getRoomById(5);
+                    nextRoom = roomRepository.getRoomById(2);
                     // one day: nextRoom = currentRoom.getRightRoom();
                 }
             }
+
             if(currentRoomId == 2) {
                 if(action.equals("Left")) {
-                    currentScore++;
-                    nextRoom = roomRepository.getRoomById(1);
-                }
-                if(action.equals("Right")) {
-                    currentScore++;
                     nextRoom = roomRepository.getRoomById(5);
                 }
-            }// to doo : finishing the room navigation
-            if(currentRoomId == 5) {
-                if(action.equals("Left")) {
-                    currentScore++;
-                    return "scores";
-                    //nextRoom = roomRepository.getRoomById(3);
-                }
                 if(action.equals("Right")) {
-                    currentScore++;
-                    //nextRoom = roomRepository.getRoomById(4);
-                    //return "scores"+currentScores;
-                    ScoreRepository.insert((String) pseudo, currentScore);
-                    return "scores";
+                    nextRoom = roomRepository.getRoomById(3);
                 }
             }
+
+            if(currentRoomId == 3) {
+                if(action.equals("Left")) {
+                    nextRoom = roomRepository.getRoomById(4);
+                }
+                if(action.equals("Right")) {
+                    nextRoom = roomRepository.getRoomById(4);
+                }
+            }
+
+            if(currentRoomId == 4) {
+                if(action.equals("Left")) {
+                    nextRoom = roomRepository.getRoomById(2);
+                }
+                if(action.equals("Right")) {
+                    nextRoom = roomRepository.getRoomById(3);
+                }
+            }
+
+            if(currentRoomId == 5) {
+                if(action.equals("Left")) {
+                    nextRoom = roomRepository.getRoomById(7);
+                }
+                if(action.equals("Right")) {
+                    nextRoom = roomRepository.getRoomById(6);
+                }
+            }
+
+            if(currentRoomId == 6) {
+                if(action.equals("Left")) {
+                    nextRoom = roomRepository.getRoomById(8);
+                }
+                if(action.equals("Right")) {
+                    nextRoom = roomRepository.getRoomById(3);
+                }
+            }
+            
+            if(currentRoomId == 7) {
+                if(action.equals("Left")) {
+                    nextRoom = roomRepository.getRoomById(8);
+                }
+                if(action.equals("Right")) {
+                    nextRoom = roomRepository.getRoomById(6);
+                }
+            }
+            if(currentRoomId == 8) {
+            // victory
+            ScoreRepository.insert((String) pseudo, currentScore);
+                return "result";
+            }
+            currentScore++;
             session.setAttribute("currentRoom", nextRoom);// salle courante = salle suivante
         }
 
@@ -90,10 +120,7 @@ class GameController {
         // we're still playing : show the current choice
         model.addAttribute("nickname", session.getAttribute("nickname"));
         model.addAttribute("currentRoom", session.getAttribute("currentRoom"));
-        model.addAttribute("currentScores", session.getAttribute("currentScores"));
-        
-            // "<form action='/game' method='post'><input name='action' value='win'><button class='btn btn-primary my-1'>Get out of prison!</button></form>" +
-            // "<form action='/game' method='post'><input name='action' value='lose'><button class='btn btn-primary my-1'>Get out of prison!</button></form>";
+        model.addAttribute("currentScore", session.getAttribute("currentScore"));
         return "game";
     }
 }
