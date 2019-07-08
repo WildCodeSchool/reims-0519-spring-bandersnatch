@@ -17,4 +17,3 @@ class PageController {
         return "result";
     }
 }
->>>>>>> dfcbf5b16556f0abb5be9078b2e4da85aed5d147
