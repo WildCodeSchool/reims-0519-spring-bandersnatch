@@ -101,6 +101,7 @@ class GameController {
 
             if(currentRoomId == 8) {
             // victory
+                
                 return "result";
             }
 
