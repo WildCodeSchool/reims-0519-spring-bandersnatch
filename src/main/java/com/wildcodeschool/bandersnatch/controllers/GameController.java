@@ -3,6 +3,7 @@ package com.wildcodeschool.bandersnatch.controllers;
 import javax.servlet.http.HttpSession;
 
 import com.wildcodeschool.bandersnatch.entities.Room;
+import com.wildcodeschool.bandersnatch.entities.Score;
 import com.wildcodeschool.bandersnatch.repositories.RoomRepository;
 import com.wildcodeschool.bandersnatch.repositories.ScoreRepository;
 
@@ -103,9 +104,14 @@ class GameController {
 
             if(currentRoomId == 8) {
             // victory
-               // ScoreRepository.insert((String) pseudo, currentScore);
-                model.addAttribute("nickname", ScoreRepository.selectScores().toString());
+               // ScoreRepository.insert((String) pseudo, currentScore); ScoreRepository.selectScores().toString()
+                model.addAttribute("nickname", "John Doe");
                 model.addAttribute("userScore", 0);
+                for(Score score : ScoreRepository.selectScores()) {
+                    System.out.println(score.getId());
+                    System.out.println(score.getNickname());
+                    System.out.println(score.getUser_score());
+                }
                 return "result";
             }
 
