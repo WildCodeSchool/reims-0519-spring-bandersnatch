@@ -21,7 +21,7 @@ public class ScoreController {
     public List<Score> getScores() {
         return ScoreRepository.selectAll();
     }
-    
+
     @PostMapping("/scores")
     public String store(
         @RequestParam String nickname,
