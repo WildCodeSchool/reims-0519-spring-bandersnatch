@@ -83,7 +83,7 @@ class GameController {
 
             if(currentRoomId == 6) {
                 if(action.equals("Left")) {
-                    nextRoom = roomRepository.getRoomById(8);
+                    return "gamewin";
                 }
                 if(action.equals("Right")) {
                     nextRoom = roomRepository.getRoomById(3);
@@ -92,7 +92,7 @@ class GameController {
             
             if(currentRoomId == 7) {
                 if(action.equals("Left")) {
-                    nextRoom = roomRepository.getRoomById(8);
+                    return "gamewin";
                 }
                 if(action.equals("Right")) {
                     nextRoom = roomRepository.getRoomById(6);
