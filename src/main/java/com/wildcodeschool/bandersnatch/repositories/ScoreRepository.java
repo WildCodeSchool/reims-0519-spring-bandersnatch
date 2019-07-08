@@ -26,7 +26,7 @@ public class ScoreRepository {
                 DB_URL, DB_USER, DB_PASSWORD
             );
             PreparedStatement statement = connection.prepareStatement(
-                "SELECT * FROM scores"
+                "SELECT * FROM scores WHERE nickname LIKE ?"
             );
         ) {
             statement.setString(1, nickname);
