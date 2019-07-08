@@ -100,6 +100,25 @@ class GameController {
             }
 
             if(currentRoomId == 8) {
+                if(action.equals("Left")) {
+                    nextRoom = roomRepository.getRoomById(9);
+                }
+                if(action.equals("Right")) {
+                    nextRoom = roomRepository.getRoomById(10);
+                }
+            }
+
+            if(currentRoomId == 9) {
+                if(action.equals("Left")) {
+                    nextRoom = roomRepository.getRoomById(7);
+                }
+                if(action.equals("Right")) {
+                    nextRoom = roomRepository.getRoomById(10);
+                }
+            }
+
+
+            if(currentRoomId == 10) {
             // victory
                 return "result";
             }
