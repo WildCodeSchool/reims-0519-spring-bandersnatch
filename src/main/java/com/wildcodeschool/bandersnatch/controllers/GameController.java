@@ -104,14 +104,10 @@ class GameController {
 
             if(currentRoomId == 8) {
             // victory
-               // ScoreRepository.insert((String) pseudo, currentScore); ScoreRepository.selectScores().toString()
+                ScoreRepository.insert((String) pseudo, currentScore);
                 model.addAttribute("nickname", "John Doe");
                 model.addAttribute("userScore", 0);
-                for(Score score : ScoreRepository.selectScores()) {
-                    System.out.println(score.getId());
-                    System.out.println(score.getNickname());
-                    System.out.println(score.getUser_score());
-                }
+                model.addAttribute("scores", ScoreRepository.selectScores());
                 return "result";
             }
 
