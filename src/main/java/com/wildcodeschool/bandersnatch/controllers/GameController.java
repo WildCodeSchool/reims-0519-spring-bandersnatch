@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import com.wildcodeschool.bandersnatch.entities.Room;
 import com.wildcodeschool.bandersnatch.repositories.RoomRepository;
+import com.wildcodeschool.bandersnatch.repositories.ScoreRepository;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 class GameController {
-
+    int currentScore = 0;
     private static RoomRepository roomRepository = new RoomRepository();
 
     @PostMapping("/game")
@@ -30,6 +31,7 @@ class GameController {
         }
 
         if(action != null) {
+            Object pseudo = session.getAttribute("nickname");
             // we're playing : check the current action
             Room nextRoom = null;
             int currentRoomId = ((Room)session.getAttribute("currentRoom")).getId();
@@ -101,12 +103,15 @@ class GameController {
 
             if(currentRoomId == 8) {
             // victory
+               // ScoreRepository.insert((String) pseudo, currentScore);
+                model.addAttribute("nickname", ScoreRepository.selectScores().toString());
+                model.addAttribute("userScore", 0);
                 return "result";
             }
 
 
 
-            
+            currentScore++;
             session.setAttribute("currentRoom", nextRoom);// salle courante = salle suivante
         }
 
