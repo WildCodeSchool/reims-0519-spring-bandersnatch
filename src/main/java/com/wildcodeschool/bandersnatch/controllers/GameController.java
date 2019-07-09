@@ -3,7 +3,6 @@ package com.wildcodeschool.bandersnatch.controllers;
 import javax.servlet.http.HttpSession;
 
 import com.wildcodeschool.bandersnatch.entities.Room;
-import com.wildcodeschool.bandersnatch.entities.Score;
 import com.wildcodeschool.bandersnatch.repositories.RoomRepository;
 import com.wildcodeschool.bandersnatch.repositories.ScoreRepository;
 
