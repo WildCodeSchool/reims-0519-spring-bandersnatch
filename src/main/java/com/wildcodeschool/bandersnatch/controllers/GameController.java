@@ -107,7 +107,6 @@ class GameController {
                 }
                 if(action.equals("Right")) {
                     ScoreRepository.insert((String) pseudo, ((Integer)session.getAttribute("userScore")));
-                    model.addAttribute("scores", ScoreRepository.selectAll());
                     return "gamewin";
                 }
             }
@@ -118,7 +117,6 @@ class GameController {
                 }
                 if(action.equals("Right")) {
                     ScoreRepository.insert((String) pseudo, ((Integer)session.getAttribute("userScore")));
-                    model.addAttribute("scores", ScoreRepository.selectAll());
                     return "gamewin";
                 }
                 
