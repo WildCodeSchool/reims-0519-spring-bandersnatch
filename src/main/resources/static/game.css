@@ -1,8 +1,3 @@
-.nav {
-    padding-top: 2rem;
-}
-
-
 header h1
 {
     background-color: #4f837f;
@@ -16,35 +11,22 @@ header h1
 
 }
 
-.bander{
+.jumbotron
+{
     width: 50%;
     margin-left: 25%;
     margin-top: 4%;
-}
-h2
-{
-    margin-top: 5%;
-    font-size: 400%;
-    text-align: center;    
-    line-height: 5rem;
-    letter-spacing: 0.5rem;
-    background: -webkit-linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    font-family: 'nunito';
+    background-color: #212529 !important;
 
 }
+
 form{
     display: flex;
     justify-content: space-around;
 }
-.card-header{
-    font-size: 40px;
-    font-weight: bold;
-    text-decoration: underline;
-    color:#4f837f;
- 
-}
+
+
+
 h3{
     font-size: 25px;
     color:#4f837f;
@@ -52,53 +34,100 @@ h3{
     font-weight: bold;
 }
 
-p{
+p
+{
     font-size: 20px;
-    color:#4f837f;
+    color:#bdbdbd;
     font-family: 'Nunito';
     
 }
-strong{
+
+strong
+{
     text-decoration: underline;
 }
+
 body 
 {
     background-image: url("img/background.png");
     height: 100%;
+    font-family: 'Nunito';
+    letter-spacing: 0.0625em;
 }
 
 
-footer
+.btn 
 {
-    background-color: #90807c;
-
-}
-
-
-.btn {
-    -webkit-box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1);
     font-family: 'Varela Round';
-    font-size: 60%;
     text-transform: uppercase;
     letter-spacing: .15rem;
-    border: 0;
+    box-sizing: border-box;
+    padding: 2em 1em;
+    width: 30%;
+    display: flex;
+    align-items: center;
 }
 
-.btn-primary {
-    background-color: #64a19d;
+.arrow
+{
+    font-size: 400%;
+    margin: 0 .1em;
 }
 
-.btn-primary:hover {
+.btn img
+{
+    width: 50%;
+}
+.btn-primary 
+{
     background-color: #4f837f;
 }
 
-.btn-primary:focus {
+.btn-primary:hover 
+{
+    background-color: #0097a7;
+}
+
+.btn-primary:focus 
+{
     background-color: #4f837f;
     color: white;
+    float: inherit;
 }
 
-.btn-primary:active {
-    background-color: #467370 ;
+.btn-primary:active 
+{
+    background-color: #4f837f ;
 }
 
+
+header 
+{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 4rem 0;
+    background: linear-gradient(to top, rgba(22, 22, 22, 0.3) 0%, rgba(22, 22, 22, 0.7) 70%, #161616 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+header h2 
+{
+    text-align: center;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    letter-spacing: 0.8rem;
+    background: -webkit-linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+header h3 
+{
+    padding: 2rem;
+    max-width: 40rem;
+    font-size: 1.25rem;
+}

@@ -106,7 +106,9 @@ class GameController {
                     nextRoom = roomRepository.getRoomById(9);
                 }
                 if(action.equals("Right")) {
-                    nextRoom = roomRepository.getRoomById(10);
+                    ScoreRepository.insert((String) pseudo, ((Integer)session.getAttribute("userScore")));
+                    model.addAttribute("scores", ScoreRepository.selectAll());
+                    return "gamewin";
                 }
             }
 
@@ -115,18 +117,13 @@ class GameController {
                     nextRoom = roomRepository.getRoomById(7);
                 }
                 if(action.equals("Right")) {
-                    nextRoom = roomRepository.getRoomById(10);
+                    ScoreRepository.insert((String) pseudo, ((Integer)session.getAttribute("userScore")));
+                    model.addAttribute("scores", ScoreRepository.selectAll());
+                    return "gamewin";
                 }
+                
             }
-
-
-            if(currentRoomId == 10) {
-            // victory
-                ScoreRepository.insert((String) pseudo, ((Integer)session.getAttribute("userScore")));
-                model.addAttribute("scores", ScoreRepository.selectAll());
-                return "result";
-            }
-            session.setAttribute("userScore", ((Integer)session.getAttribute("userScore")) + 1);
+            session.setAttribute("userScore", ((Integer)session.getAttribute("userScore")) + 1);     
             session.setAttribute("currentRoom", nextRoom);// salle courante = salle suivante
         }
 
