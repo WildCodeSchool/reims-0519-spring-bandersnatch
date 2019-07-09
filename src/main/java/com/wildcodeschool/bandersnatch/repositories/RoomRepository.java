@@ -31,7 +31,7 @@ public class RoomRepository {
         }));
         rooms.add(new Room(4, "The Veggie Room", new String[]{
             "Inside, you meet a strange woman, dressed like poisonIvy in Batman (I hope you saw the movie…), she his cooking a weird smelly soup in her chaudron;",
-            "she looks nice and wants to share her diner with you;<br>It is really nice of her but the smell and color are making you cry, and you would have tasted it but dead rats nearby the chaudron make you think otherwise…",
+            "she looks nice and wants to share her diner with you. It is really nice of her but the smell and color are making you cry, and you would have tasted it but dead rats nearby the chaudron make you think otherwise…",
             "Time to leave!!! Quick, take one of the 2 doors, she is coming at you with a spoon!!!"
         }));
         rooms.add(new Room(5, "The Inception Room", new String[]{
