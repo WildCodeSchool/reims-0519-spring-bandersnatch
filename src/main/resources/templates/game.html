@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-    <head>
+  <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,52 +16,31 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
                           
     <title>Bandersnatch</title>
+
+    <!--Police google Nunito-->
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+    </style> 
+    
   </head>
 
   <body>    
-        <header>
-                <h1 class="mx-auto my-0 text-uppercase">Bandersnatch   -   Project 2</h1>
-            </header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar10">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse" id="navbar10">
-                    <ul class="navbar-nav nav-fill w-100">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    
-    <h2 class="mx-auto my-0 text-uppercase">ready to escape</h2>
+
+    <header>
+        <h2 class="mx-auto my-0 text-uppercase">ready to escape</h2>
+    </header>
     
     <section class="bander">
-
-        <div class="jumbotron text-center">
+     <div class="jumbotron">
               <h3 class="" th:text="|Hey ${nickname} ! You're in ${currentRoom.title}|">Hey John Doe ! You're in the prison</h3>
               <div class="">
                   <p th:each="p : ${currentRoom.description}" th:text="${p}">This is a bad situation</p>
               </div>
-              <form action="/game" method="post">
+
+          <form action="/game" method="post">
                     <!--button-->
-                <button name='action' value='Left' class="btn btn-primary my-1">Left</button>
-                <button name='action' value='Right' class="btn btn-primary my-1">Right</button>
+                <button name='action' value='Left' class="btn btn-primary my-1 justify-content-end">  Left<span class="arrow">&#8624;</span></button>
+                <button name='action' value='Right' class="btn btn-primary my-1 justify-content-start"> <span class="arrow">&#8625;</span> Right</button>
               </form>              
         </div>
 

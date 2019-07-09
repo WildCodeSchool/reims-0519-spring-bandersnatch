@@ -83,7 +83,7 @@ class GameController {
 
             if(currentRoomId == 6) {
                 if(action.equals("Left")) {
-                    nextRoom = roomRepository.getRoomById(8);
+                    return "gamewin";
                 }
                 if(action.equals("Right")) {
                     nextRoom = roomRepository.getRoomById(3);
@@ -92,7 +92,7 @@ class GameController {
             
             if(currentRoomId == 7) {
                 if(action.equals("Left")) {
-                    nextRoom = roomRepository.getRoomById(8);
+                    return "gamewin";
                 }
                 if(action.equals("Right")) {
                     nextRoom = roomRepository.getRoomById(6);
@@ -104,7 +104,7 @@ class GameController {
                     nextRoom = roomRepository.getRoomById(9);
                 }
                 if(action.equals("Right")) {
-                    nextRoom = roomRepository.getRoomById(10);
+                    return "gamewin";
                 }
             }
 
@@ -113,17 +113,9 @@ class GameController {
                     nextRoom = roomRepository.getRoomById(7);
                 }
                 if(action.equals("Right")) {
-                    nextRoom = roomRepository.getRoomById(10);
+                    return "gamewin";
                 }
             }
-
-
-            if(currentRoomId == 10) {
-            // victory
-                return "result";
-            }
-
-
 
             
             session.setAttribute("currentRoom", nextRoom);// salle courante = salle suivante

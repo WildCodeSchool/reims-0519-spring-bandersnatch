@@ -61,10 +61,8 @@ footer
     -webkit-box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1);
     font-family: 'Varela Round';
-    font-size: 60%;
     text-transform: uppercase;
     letter-spacing: .15rem;
-    border: 0;
 }
 
 .btn-primary {
