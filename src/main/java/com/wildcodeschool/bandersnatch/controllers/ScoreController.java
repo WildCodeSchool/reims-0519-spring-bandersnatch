@@ -1,6 +1,7 @@
 package com.wildcodeschool.bandersnatch.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -13,8 +14,8 @@ import java.util.List;
 public class ScoreController {
 
     @GetMapping("/scores")
-    @ResponseBody
-    public List<Score> getScores() {
-        return ScoreRepository.selectAll();
+    public String getScores(Model model) {
+        model.addAttribute("scores", ScoreRepository.selectAll());
+        return "result";
     }
 }
