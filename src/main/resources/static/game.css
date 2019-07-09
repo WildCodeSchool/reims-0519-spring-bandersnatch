@@ -11,7 +11,8 @@ header h1
 
 }
 
-.bander{
+.bander
+{
     width: 50%;
     margin-left: 25%;
     margin-top: 4%;
@@ -22,13 +23,7 @@ form{
     justify-content: space-around;
 }
 
-.card-header{
-    font-size: 40px;
-    font-weight: bold;
-    text-decoration: underline;
-    color:#0097a7;
- 
-}
+
 
 h3{
     font-size: 25px;
@@ -58,11 +53,6 @@ body
     letter-spacing: 0.0625em;
 }
 
-footer
-{
-    background-color: #90807c;
-
-}
 
 .btn 
 {
@@ -70,7 +60,7 @@ footer
     text-transform: uppercase;
     letter-spacing: .15rem;
     box-sizing: border-box;
-    padding: 1em 2em;
+    padding: 2em 1em;
     width: 30%;
     display: flex;
     align-items: center;
@@ -88,28 +78,27 @@ footer
 }
 .btn-primary 
 {
-    background-color: #0097a7;
+    background-color: #4f837f;
 }
 
 .btn-primary:hover 
 {
-    background-color: #4f837f;
+    background-color: #0097a7;
 }
 
 .btn-primary:focus 
 {
-    background-color: #0097a7;
+    background-color: #4f837f;
     color: white;
     float: inherit;
 }
 
 .btn-primary:active 
 {
-    background-color: #0097a7 ;
+    background-color: #4f837f ;
 }
 
-
-.card 
+.jumbotron
 {
     background-color: #212529;
 }

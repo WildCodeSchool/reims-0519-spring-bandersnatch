@@ -10,7 +10,7 @@
             
     <!-- test fenetre modal -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" th:href="@{/game.css}" href="../static/game.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/gamewin.css}" href="../static/gamewin.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -26,27 +26,20 @@
 
   <body>    
 
-    <header>
-        <h2 class="mx-auto my-0 text-uppercase">ready to escape</h2>
-    </header>
-    
-    <section class="bander">
-     <div class="jumbotron">
-              <h3 class="" th:text="|Hey ${nickname} ! You're in ${currentRoom.title}|">Hey John Doe ! You're in the prison</h3>
-              <div class="">
-                  <p th:each="p : ${currentRoom.description}" th:text="${p}">This is a bad situation</p>
-              </div>
+    <article class="bandhead">
+        <div class="container d-flex h-100 align-items-center">
+            <div class="mx-auto text-center">
 
-          <form action="/game" method="post">
-                    <!--button-->
-                <button name='action' value='Left' class="btn btn-primary my-1 justify-content-end">  Left<span class="arrow">&#8624;</span></button>
-                <button name='action' value='Right' class="btn btn-primary my-1 justify-content-start"> <span class="arrow">&#8625;</span> Right</button>
-              </form>              
+                <h2 class="mx-auto my-0 text-uppercase">VICTORY !!</h2>
+
+                <h3 class="text-white-50 mx-auto mt-2 mb-5">Yes, you went out!!!! Great :) Your friends Sherlock & Watson are here. <br><br>  Now get your ass out of that city and thanks for playing :)</h3>
+           
+                <a class="btn btn-primary" href="result" role="button" >RESULT</a>
+
+            </div> 
         </div>
-
-    </section>
-        
-
+    </article>
+    
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
