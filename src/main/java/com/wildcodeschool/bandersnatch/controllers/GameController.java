@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import com.wildcodeschool.bandersnatch.entities.Room;
 import com.wildcodeschool.bandersnatch.repositories.RoomRepository;
+import com.wildcodeschool.bandersnatch.repositories.ScoreRepository;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 class GameController {
-
     private static RoomRepository roomRepository = new RoomRepository();
 
     @PostMapping("/game")
@@ -26,10 +26,12 @@ class GameController {
 
             // register nickname in the session
             session.setAttribute("nickname", nickname);
+            session.setAttribute("userScore", 0);
             session.setAttribute("currentRoom", roomRepository.getRooms().get(0));
         }
 
         if(action != null) {
+            Object pseudo = session.getAttribute("nickname");
             // we're playing : check the current action
             Room nextRoom = null;
             int currentRoomId = ((Room)session.getAttribute("currentRoom")).getId();
@@ -83,7 +85,7 @@ class GameController {
 
             if(currentRoomId == 6) {
                 if(action.equals("Left")) {
-                    return "gamewin";
+                    nextRoom = roomRepository.getRoomById(8);
                 }
                 if(action.equals("Right")) {
                     nextRoom = roomRepository.getRoomById(3);
@@ -92,7 +94,7 @@ class GameController {
             
             if(currentRoomId == 7) {
                 if(action.equals("Left")) {
-                    return "gamewin";
+                    nextRoom = roomRepository.getRoomById(8);
                 }
                 if(action.equals("Right")) {
                     nextRoom = roomRepository.getRoomById(6);
@@ -104,6 +106,7 @@ class GameController {
                     nextRoom = roomRepository.getRoomById(9);
                 }
                 if(action.equals("Right")) {
+                    ScoreRepository.insert((String) pseudo, ((Integer)session.getAttribute("userScore")));
                     return "gamewin";
                 }
             }
@@ -113,11 +116,12 @@ class GameController {
                     nextRoom = roomRepository.getRoomById(7);
                 }
                 if(action.equals("Right")) {
+                    ScoreRepository.insert((String) pseudo, ((Integer)session.getAttribute("userScore")));
                     return "gamewin";
                 }
+                
             }
-
-            
+            session.setAttribute("userScore", ((Integer)session.getAttribute("userScore")) + 1);     
             session.setAttribute("currentRoom", nextRoom);// salle courante = salle suivante
         }
 
@@ -125,9 +129,6 @@ class GameController {
         // we're still playing : show the current choice
         model.addAttribute("nickname", session.getAttribute("nickname"));
         model.addAttribute("currentRoom", session.getAttribute("currentRoom"));
-        
-            // "<form action='/game' method='post'><input name='action' value='win'><button class='btn btn-primary my-1'>Get out of prison!</button></form>" +
-            // "<form action='/game' method='post'><input name='action' value='lose'><button class='btn btn-primary my-1'>Get out of prison!</button></form>";
         return "game";
     }
 }

@@ -62,7 +62,7 @@ body
     text-transform: uppercase;
     letter-spacing: .15rem;
     box-sizing: border-box;
-    padding: 2em 1em;
+    padding: 0em 2em;
     width: 30%;
     display: flex;
     align-items: center;
