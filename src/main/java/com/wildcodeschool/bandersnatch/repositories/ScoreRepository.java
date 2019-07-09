@@ -18,7 +18,7 @@ public class ScoreRepository {
 
     private final static String DB_URL = "jdbc:mysql://localhost:3306/bandersnatch_db?serverTimezone=GMT";
     private final static String DB_USER = "root";
-    private final static String DB_PASSWORD = "segatower51";
+    private final static String DB_PASSWORD = "";
 
     public static List<Score> selectByNickname(String nickname) {
         try(
@@ -26,7 +26,7 @@ public class ScoreRepository {
                 DB_URL, DB_USER, DB_PASSWORD
             );
             PreparedStatement statement = connection.prepareStatement(
-                "SELECT * FROM scores WHERE "
+                "SELECT * FROM scores "
             );
         ) {
             statement.setString(1, nickname);
