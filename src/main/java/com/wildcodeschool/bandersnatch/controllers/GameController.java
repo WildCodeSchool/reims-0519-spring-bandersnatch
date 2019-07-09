@@ -100,12 +100,22 @@ class GameController {
             }
 
             if(currentRoomId == 8) {
-            // victory
-                
-                return "result";
+                if(action.equals("Left")) {
+                    nextRoom = roomRepository.getRoomById(9);
+                }
+                if(action.equals("Right")) {
+                    return "gamewin";
+                }
             }
 
-
+            if(currentRoomId == 9) {
+                if(action.equals("Left")) {
+                    nextRoom = roomRepository.getRoomById(7);
+                }
+                if(action.equals("Right")) {
+                    return "gamewin";
+                }
+            }
 
             
             session.setAttribute("currentRoom", nextRoom);// salle courante = salle suivante
