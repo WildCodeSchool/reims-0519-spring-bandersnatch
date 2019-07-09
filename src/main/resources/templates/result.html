@@ -28,15 +28,13 @@
                             
                         <thead>
                             <tr>
-                            <td>Rank</td>
                             <td>UserName</td>
                             <td>Score</td>
                             </tr>
                         </thead>
                         <tr th:each="score : ${scores}">
-                                <th scope="row">1st</th>
                                 <td><strong th:text="${score.nickname}"></strong></td>
-                                <td><strong th:text="${score.userScore}"></strong></td>
+                                <td><strong th:text="${score.user_score}"></strong></td>
                             </tr>
                         <tbody>                        
                     </table>

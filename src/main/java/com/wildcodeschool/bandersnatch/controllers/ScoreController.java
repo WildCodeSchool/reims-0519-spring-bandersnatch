@@ -19,17 +19,17 @@ public class ScoreController {
     @GetMapping("/scores")
     @ResponseBody
     public List<Score> getScores() {
-        return ScoreRepository.selectScores();
+        return ScoreRepository.selectAll();
     }
 
     @PostMapping("/scores")
     public String store(
         @RequestParam String nickname,
-        @RequestParam (defaultValue = "0") int userScore
+        @RequestParam (defaultValue = "0") int user_score
     ) {
         int idGeneratedByInsertion = ScoreRepository.insert(
             nickname,
-            userScore
+            user_score
         );
         return "redirect:/scores";
     }

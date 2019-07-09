@@ -4,7 +4,7 @@ public class Score {
 
     private int id;
     private String nickname;
-    private int userScore;
+    private int user_score;
 
    
 
@@ -22,19 +22,19 @@ public class Score {
         this.nickname = nickname;
     }
 
-    public int getuserScore() {
-        return userScore;
+    public int getUser_score() {
+        return user_score;
     }
-    public void setUserScore(int userScore) {
-        this.userScore = userScore;
+    public void setUserScore(int user_score) {
+        this.user_score = user_score;
     }
     public Score(){
 
     }
 
-    public Score(int id, String nickname, int userScore) {
+    public Score(int id, String nickname, int user_score) {
     this.id = id;
     this.nickname = nickname;
-    this.userScore = userScore;
+    this.user_score = user_score;
     }
 }

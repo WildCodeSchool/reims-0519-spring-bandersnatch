@@ -39,8 +39,8 @@ public class ScoreRepository {
                 while(resulSet.next()){
                     int id = resulSet.getInt("id");
                     nickname = resulSet.getString("nickname");
-                    int userScore = resulSet.getInt("user_score");
-                    scores.add(new Score(id, nickname, userScore));
+                    int user_score = resulSet.getInt("user_score");
+                    scores.add(new Score(id, nickname, user_score));
                 }
 
                 return scores;
@@ -52,13 +52,13 @@ public class ScoreRepository {
             );
         }
     }
-    public static List<Score> selectScores() {
+    public static List<Score> selectAll() {
         try(
             Connection connection = DriverManager.getConnection(
                 DB_URL, DB_USER, DB_PASSWORD
             );
             PreparedStatement statement = connection.prepareStatement(
-                "SELECT * FROM scores ORDER BY user_score LIMIT 0, 5;"
+                "SELECT * FROM scores ORDER BY user_score LIMIT 0, 10;"
             );
             ResultSet resulSet = statement.executeQuery();
         ) {
@@ -67,8 +67,8 @@ public class ScoreRepository {
             while(resulSet.next()){
                 int id = resulSet.getInt("id");
                 String nickname = resulSet.getString("nickname");
-                int userScore = resulSet.getInt("user_score");
-                scores.add(new Score(id, nickname, userScore));
+                int user_score = resulSet.getInt("user_score");
+                scores.add(new Score(id, nickname, user_score));
             }
 
             return scores;
@@ -96,8 +96,8 @@ public class ScoreRepository {
             ) {
                 if(resulSet.next()){
                     String nickname = resulSet.getString("nickname");
-                    int userScore = resulSet.getInt("user_score");
-                    return new Score(id, nickname, userScore);
+                    int user_score = resulSet.getInt("user_score");
+                    return new Score(id, nickname, user_score);
                 }
                 else {
                     throw new ResponseStatusException(
@@ -114,7 +114,7 @@ public class ScoreRepository {
     }
     public static int insert(
         String nickname,
-        int userScore
+        int user_score
     ) {
         try(
             Connection connection = DriverManager.getConnection(
@@ -126,7 +126,7 @@ public class ScoreRepository {
             );
         ) {
             statement.setString(1, nickname);
-            statement.setInt(2, userScore);
+            statement.setInt(2, user_score);
     
             if(statement.executeUpdate() != 1) {
                 throw new ResponseStatusException(

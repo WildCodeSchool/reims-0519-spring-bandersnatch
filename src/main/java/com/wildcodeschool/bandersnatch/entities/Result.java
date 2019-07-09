@@ -23,8 +23,8 @@ class Result {
 
         // remplacer des identifiants par des valeurs
 
-        String nicknameData = result.replace("${nickname}", ScoreRepository.selectScores().get(1).toString());
-        String scoreData = result.replace("${userScore}", ScoreRepository.selectScores().get(2).toString());
+        String nicknameData = result.replace("${nickname}", ScoreRepository.selectAll().get(1).toString());
+        String scoreData = result.replace("${userScore}", ScoreRepository.selectAll().get(2).toString());
 
     }
 }

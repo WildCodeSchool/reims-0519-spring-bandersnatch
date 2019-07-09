@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 class GameController {
-    int currentScore = 0;
     private static RoomRepository roomRepository = new RoomRepository();
 
     @PostMapping("/game")
@@ -28,6 +27,7 @@ class GameController {
 
             // register nickname in the session
             session.setAttribute("nickname", nickname);
+            session.setAttribute("userScore", 0);
             session.setAttribute("currentRoom", roomRepository.getRooms().get(0));
         }
 
@@ -104,16 +104,11 @@ class GameController {
 
             if(currentRoomId == 8) {
             // victory
-                ScoreRepository.insert((String) pseudo, currentScore);
-                model.addAttribute("nickname", "John Doe");
-                model.addAttribute("userScore", 0);
-                model.addAttribute("scores", ScoreRepository.selectScores());
+                ScoreRepository.insert((String) pseudo, ((Integer)session.getAttribute("userScore")));
+                model.addAttribute("scores", ScoreRepository.selectAll());
                 return "result";
             }
-
-
-
-            currentScore++;
+            session.setAttribute("userScore", ((Integer)session.getAttribute("userScore")) + 1);
             session.setAttribute("currentRoom", nextRoom);// salle courante = salle suivante
         }
 
@@ -121,9 +116,6 @@ class GameController {
         // we're still playing : show the current choice
         model.addAttribute("nickname", session.getAttribute("nickname"));
         model.addAttribute("currentRoom", session.getAttribute("currentRoom"));
-        
-            // "<form action='/game' method='post'><input name='action' value='win'><button class='btn btn-primary my-1'>Get out of prison!</button></form>" +
-            // "<form action='/game' method='post'><input name='action' value='lose'><button class='btn btn-primary my-1'>Get out of prison!</button></form>";
         return "game";
     }
 }
