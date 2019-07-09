@@ -11,11 +11,13 @@ header h1
 
 }
 
-.bander
+.jumbotron
 {
     width: 50%;
     margin-left: 25%;
     margin-top: 4%;
+    background-color: #212529 !important;
+
 }
 
 form{
@@ -98,10 +100,6 @@ body
     background-color: #4f837f ;
 }
 
-.jumbotron
-{
-    background-color: #212529;
-}
 
 header 
 {
